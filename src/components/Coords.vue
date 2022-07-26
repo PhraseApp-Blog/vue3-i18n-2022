@@ -21,8 +21,14 @@ export default {
   },
 
   computed: {
-    formattedCoords() {
-      return `${this.coords.latitude}° N, ${this.coords.longitude}° E`
+    issPosition() {
+      const { latitude, longitude } = this.coords
+
+      return this.$t('issPosition', {
+        latitude,
+        longitude,
+        datetime: this.datetime,
+      })
     },
   },
 }
@@ -33,12 +39,6 @@ export default {
     class="text-sm text-purple-300 text-center border-purple-700 border-solid border-[0.5px] rounded-md p-3 mb-8"
   >
     <span v-if="loading">{{ $t('loading') }}</span>
-    <span v-else>{{
-      $t('issPosition', {
-        latitude: coords.latitude,
-        longitude: coords.longitude,
-        datetime,
-      })
-    }}</span>
+    <span v-else>{{ issPosition }}</span>
   </p>
 </template>
