@@ -1,9 +1,12 @@
 <script setup>
-import TheWelcome from '@/components/TheWelcome.vue'
+import Coords from '../components/Coords.vue'
+import Astronauts from '../components/Astronauts.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Coords />
+
+    <Astronauts />
   </main>
 </template>

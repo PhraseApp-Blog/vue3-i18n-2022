@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Oleg Artemyev",
+    "photoUrl": "o-artemeyev.jpg",
+    "nationality": "Russia 🇷🇺",
+    "craft": "ISS"
+  },
+  {
+    "id": 2,
+    "name": "Denis Matveev",
+    "photoUrl": "d-matveev.jpg",
+    "nationality": "Russia 🇷🇺",
+    "craft": "ISS"
+  },
+  {
+    "id": 3,
+    "name": "Sergey Korsakov",
+    "photoUrl": "s-korsakov.jpg",
+    "nationality": "Russia 🇷🇺",
+    "craft": "ISS"
+  },
+  {
+    "id": 4,
+    "name": "Kjell Lindgren",
+    "photoUrl": "k-lindgren.jpg",
+    "nationality": "USA 🇺🇸",
+    "craft": "ISS"
+  },
+  {
+    "id": 5,
+    "name": "Bob Hines",
+    "photoUrl": "b-hines.jpg",
+    "nationality": "USA 🇺🇸",
+    "craft": "ISS"
+  },
+  {
+    "id": 6,
+    "name": "Samantha Cristoforetti",
+    "photoUrl": "s-cristoforetti.jpg",
+    "nationality": "Italy 🇮🇹",
+    "craft": "ISS"
+  },
+  {
+    "id": 7,
+    "name": "Jessica Watkins",
+    "photoUrl": "j-watkins.jpg",
+    "nationality": "USA 🇺🇸",
+    "craft": "ISS"
+  },
+  {
+    "id": 8,
+    "name": "Cai Xuzhe",
+    "photoUrl": "c-xuzhe.jpg",
+    "nationality": "China 🇨🇳",
+    "craft": "Tiangong"
+  },
+  {
+    "id": 9,
+    "name": "Chen Dong",
+    "photoUrl": "c-dong.jpg",
+    "nationality": "China 🇨🇳",
+    "craft": "Tiangong"
+  },
+  {
+    "id": 10,
+    "name": "Liu Yang",
+    "photoUrl": "l-yang.jpg",
+    "nationality": "China 🇨🇳",
+    "craft": "Tiangong"
+  }
+]
