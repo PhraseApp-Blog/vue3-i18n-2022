@@ -27,7 +27,7 @@ export default {
   <div v-else>
     <div class="flex justify-between items-baseline mb-6">
       <h2 class="text-purple-300 text-2xl font-extralight">
-        🧑‍🚀 {{ astros.length }} people in space
+        🧑‍🚀 {{ $tc('peopleInSpace', astros.length) }}
       </h2>
 
       <p class="text-purple-300 font-extralight text-sm">
