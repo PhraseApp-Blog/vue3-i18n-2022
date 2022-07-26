@@ -32,7 +32,13 @@ export default {
   <p
     class="text-sm text-purple-300 text-center border-purple-700 border-solid border-[0.5px] rounded-md p-3 mb-8"
   >
-    <span v-if="loading">Loading...</span>
-    <span v-else>The ISS was over {{ formattedCoords }} on {{ datetime }}</span>
+    <span v-if="loading">{{ $t('loading') }}</span>
+    <span v-else>{{
+      $t('issPosition', {
+        latitude: coords.latitude,
+        longitude: coords.longitude,
+        datetime,
+      })
+    }}</span>
   </p>
 </template>
