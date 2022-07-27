@@ -1,3 +1,5 @@
+import qualifiedLocales from './qualifiedLocales'
+
 export const numberFormats = {
   'en-US': {
     coords: {
@@ -14,4 +16,13 @@ export const numberFormats = {
       numberingSystem: 'latn',
     },
   },
+}
+
+export function fn(number, format, locale) {
+  const qualifiedLocale = qualifiedLocales[locale]
+
+  return new Intl.NumberFormat(
+    qualifiedLocale,
+    numberFormats[qualifiedLocale][format]
+  ).format(number)
 }

@@ -5,11 +5,7 @@ import { arabicPluralRules } from './plurals'
 
 const i18n = createI18n({
   locale: 'en',
-  fallbackLocale: {
-    en: ['en-US'],
-    ar: ['ar-EG'],
-    default: ['en'],
-  },
+  fallbackLocale: 'en',
   messages,
   numberFormats,
   pluralizationRules: {

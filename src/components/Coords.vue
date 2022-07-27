@@ -1,4 +1,6 @@
 <script>
+import { fn } from '../i18n/numbers'
+
 export default {
   data() {
     return {
@@ -25,8 +27,8 @@ export default {
       const { latitude, longitude } = this.coords
 
       return this.$t('issPosition', {
-        latitude: this.$n(latitude, 'coords'),
-        longitude: this.$n(longitude, 'coords'),
+        latitude: fn(latitude, 'coords', this.$i18n.locale),
+        longitude: fn(longitude, 'coords', this.$i18n.locale),
         datetime: this.datetime,
       })
     },
