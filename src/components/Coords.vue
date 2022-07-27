@@ -25,8 +25,8 @@ export default {
       const { latitude, longitude } = this.coords
 
       return this.$t('issPosition', {
-        latitude,
-        longitude,
+        latitude: this.$n(latitude, 'coords'),
+        longitude: this.$n(longitude, 'coords'),
         datetime: this.datetime,
       })
     },
