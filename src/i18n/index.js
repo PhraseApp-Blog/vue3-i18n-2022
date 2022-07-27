@@ -6,11 +6,7 @@ import { datetimeFormats } from './datetimes'
 
 const i18n = createI18n({
   locale: 'en',
-  fallbackLocale: {
-    en: ['en-US'],
-    ar: ['ar-EG'],
-    default: 'en',
-  },
+  fallbackLocale: 'en',
   messages,
   numberFormats,
   datetimeFormats,

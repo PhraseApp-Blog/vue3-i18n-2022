@@ -1,4 +1,5 @@
 <script>
+import { fd } from '../i18n/datetimes'
 import { fn } from '../i18n/numbers'
 
 export default {
@@ -29,7 +30,7 @@ export default {
       return this.$t('issPosition', {
         latitude: fn(latitude, 'coords', this.$i18n.locale),
         longitude: fn(longitude, 'coords', this.$i18n.locale),
-        datetime: this.$d(this.datetime, 'full'),
+        datetime: fd(this.datetime, 'full', this.$i18n.locale),
       })
     },
   },
