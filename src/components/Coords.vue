@@ -29,7 +29,7 @@ export default {
       return this.$t('issPosition', {
         latitude: fn(latitude, 'coords', this.$i18n.locale),
         longitude: fn(longitude, 'coords', this.$i18n.locale),
-        datetime: this.datetime,
+        datetime: this.$d(this.datetime, 'full'),
       })
     },
   },

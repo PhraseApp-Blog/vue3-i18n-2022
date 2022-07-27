@@ -13,7 +13,6 @@ export const numberFormats = {
       style: 'decimal',
       minimumSignificantDigits: 6,
       maximumSignificantDigits: 6,
-      numberingSystem: 'latn',
     },
   },
 }

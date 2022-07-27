@@ -8,6 +8,7 @@ export default {
     return {
       loading: true,
       astros: [],
+      updated: new Date(),
     }
   },
 
@@ -31,7 +32,7 @@ export default {
       </h2>
 
       <p class="text-purple-300 font-extralight text-sm">
-        Updated Jul 26, 2022
+        {{ $t('updatedAt', { date: $d(updated, 'short') }) }}
       </p>
     </div>
 
