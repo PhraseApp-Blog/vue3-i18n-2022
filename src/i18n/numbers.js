@@ -1,5 +1,3 @@
-import qualifiedLocales from './qualifiedLocales'
-
 export const numberFormats = {
   'en-US': {
     coords: {

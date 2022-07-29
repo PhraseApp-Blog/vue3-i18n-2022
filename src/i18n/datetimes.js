@@ -1,5 +1,3 @@
-import qualifiedLocales from './qualifiedLocales'
-
 export const datetimeFormats = {
   'en-US': {
     full: {
@@ -23,13 +21,4 @@ export const datetimeFormats = {
       day: 'numeric',
     },
   },
-}
-
-export function fd(date, format, locale) {
-  const qualifiedLocale = qualifiedLocales[locale]
-
-  return new Intl.DateTimeFormat(
-    qualifiedLocale,
-    datetimeFormats[qualifiedLocale][format]
-  ).format(date)
 }
