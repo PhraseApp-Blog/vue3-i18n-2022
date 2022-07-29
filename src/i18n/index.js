@@ -5,13 +5,13 @@ import { arabicPluralRules } from './plurals'
 import { datetimeFormats } from './datetimes'
 
 const i18n = createI18n({
-  locale: 'en',
-  fallbackLocale: 'en',
+  locale: 'en-US',
+  fallbackLocale: 'en-US',
   messages,
   numberFormats,
   datetimeFormats,
   pluralizationRules: {
-    ar: arabicPluralRules,
+    'ar-EG': arabicPluralRules,
   },
 })
 

@@ -1,5 +1,4 @@
 <script>
-import { fd } from '../i18n/datetimes'
 import AstroCard from './AstroCard.vue'
 
 export default {
@@ -11,10 +10,6 @@ export default {
       astros: [],
       updated: new Date(),
     }
-  },
-
-  methods: {
-    fd,
   },
 
   created() {
@@ -37,7 +32,7 @@ export default {
       </h2>
 
       <p class="text-purple-300 font-extralight text-sm">
-        {{ $t('updatedAt', { date: fd(updated, 'short', $i18n.locale) }) }}
+        {{ $t('updatedAt', { date: $d(updated, 'short') }) }}
       </p>
     </div>
 

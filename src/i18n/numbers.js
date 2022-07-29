@@ -16,12 +16,3 @@ export const numberFormats = {
     },
   },
 }
-
-export function fn(number, format, locale) {
-  const qualifiedLocale = qualifiedLocales[locale]
-
-  return new Intl.NumberFormat(
-    qualifiedLocale,
-    numberFormats[qualifiedLocale][format]
-  ).format(number)
-}

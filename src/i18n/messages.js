@@ -1,5 +1,5 @@
 export default {
-  en: {
+  'en-US': {
     appTitle: 'Mushahed',
     logo: '@:appTitle logo',
     home: 'Home',
@@ -13,7 +13,7 @@ export default {
       'No people in space | {n} person in space | {n} people in space',
     updatedAt: 'Updated {date}',
   },
-  ar: {
+  'ar-EG': {
     appTitle: 'مشاهد',
     logo: 'رمز @:appTitle',
     home: 'الرئيسية',
