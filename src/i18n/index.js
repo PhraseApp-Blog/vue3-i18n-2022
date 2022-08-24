@@ -4,6 +4,11 @@ import { numberFormats } from './numbers'
 import { arabicPluralRules } from './plurals'
 import { datetimeFormats } from './datetimes'
 
+export const supportedLocales = {
+  'en-US': { name: 'English' },
+  'ar-EG': { name: 'العربية (Arabic)' },
+}
+
 export const defaultLocale = 'en-US'
 
 const i18n = createI18n({
