@@ -7,7 +7,8 @@ import './assets/main.css'
 
 const app = createApp(App)
 
-app.use(i18n)
+i18n.setup()
+app.use(i18n.instance)
 app.use(router)
 
 app.mount('#app')

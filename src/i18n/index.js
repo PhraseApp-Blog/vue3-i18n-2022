@@ -11,15 +11,37 @@ export const supportedLocales = {
 
 export const defaultLocale = 'en-US'
 
-const i18n = createI18n({
-  locale: defaultLocale,
-  fallbackLocale: defaultLocale,
-  messages,
-  numberFormats,
-  datetimeFormats,
-  pluralizationRules: {
-    'ar-EG': arabicPluralRules,
-  },
-})
+let _i18n
 
-export default i18n
+function setup(options = { locale: defaultLocale }) {
+  _i18n = createI18n({
+    locale: options.locale,
+    fallbackLocale: defaultLocale,
+    messages,
+    numberFormats,
+    datetimeFormats,
+    pluralizationRules: {
+      'ar-EG': arabicPluralRules,
+    },
+  })
+
+  setLocale(options.locale)
+
+  return _i18n
+}
+
+function setLocale(newLocale) {
+  if (_i18n.global.locale === newLocale) {
+    return
+  }
+
+  _i18n.global.locale = newLocale
+}
+
+export default {
+  get instance() {
+    return _i18n
+  },
+  setup,
+  setLocale,
+}

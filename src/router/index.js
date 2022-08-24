@@ -33,7 +33,7 @@ router.beforeEach((to, from) => {
   const prevLocale = from.params.locale
 
   if (newLocale !== prevLocale) {
-    i18n.global.locale = newLocale
+    i18n.setLocale(newLocale)
   }
 })
 
