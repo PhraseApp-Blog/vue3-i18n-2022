@@ -28,13 +28,16 @@ const router = createRouter({
   ],
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach(async (to, from) => {
   const newLocale = to.params.locale
   const prevLocale = from.params.locale
 
-  if (newLocale !== prevLocale) {
-    i18n.setLocale(newLocale)
+  if (newLocale === prevLocale) {
+    return
   }
+
+  await i18n.loadMessagesFor(newLocale)
+  i18n.setLocale(newLocale)
 })
 
 export default router
