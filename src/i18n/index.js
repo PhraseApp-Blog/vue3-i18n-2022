@@ -6,8 +6,8 @@ import { datetimeFormats } from './datetimes'
 import defaultMessages from '../translations/en-US.json'
 
 export const supportedLocales = {
-  'en-US': { name: 'English' },
-  'ar-EG': { name: 'العربية (Arabic)' },
+  'en-US': { name: 'English', dir: 'ltr' },
+  'ar-EG': { name: 'العربية (Arabic)', dir: 'rtl' },
 }
 
 export const defaultLocale = 'en-US'
@@ -50,6 +50,7 @@ function setDocumentAttributesFor(locale) {
   const htmlElement = document.querySelector('html')
 
   htmlElement.setAttribute('lang', locale)
+  htmlElement.setAttribute('dir', supportedLocales[locale].dir)
 }
 
 export default {
