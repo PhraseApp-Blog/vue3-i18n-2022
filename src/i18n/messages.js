@@ -12,6 +12,10 @@ export default {
     peopleInSpace:
       'No people in space | {n} person in space | {n} people in space',
     updatedAt: 'Updated {date}',
+    photoOf: 'Photo of {name}',
+    nationality: 'From',
+    craft: 'Craft',
+    aboutDescription: 'A demo app that celebrates our brave astronauts.',
   },
   'ar-EG': {
     appTitle: 'مشاهد',
@@ -27,5 +31,9 @@ export default {
     peopleInSpace:
       'لا يوجد أحد في الفضاء | يوجد شخص {n} في الفضاء | يوجد شخصان في الفضاء | توجد {n} أشخاص في الفضاء | يوجد {n} شخص في الفضاء | يوجد {n} شخص في الفضاء',
     updatedAt: 'أخر تحديث {date}',
+    photoOf: 'صورة {name}',
+    nationality: 'من',
+    craft: 'مركبة',
+    aboutDescription: 'تطبيق تجريبي يحتفي برواد الفضاء الشجعان.',
   },
 }
