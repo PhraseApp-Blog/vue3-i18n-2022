@@ -1,9 +1,9 @@
+import { nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
 import { numberFormats } from './numbers'
 import { arabicPluralRules } from './plurals'
 import { datetimeFormats } from './datetimes'
 import defaultMessages from '../translations/en-US.json'
-import { nextTick } from 'vue'
 
 export const supportedLocales = {
   'en-US': { name: 'English' },
@@ -32,11 +32,8 @@ function setup(options = { locale: defaultLocale }) {
 }
 
 function setLocale(newLocale) {
-  if (_i18n.global.locale === newLocale) {
-    return
-  }
-
   _i18n.global.locale = newLocale
+  setDocumentAttributesFor(newLocale)
 }
 
 async function loadMessagesFor(locale) {
@@ -47,6 +44,12 @@ async function loadMessagesFor(locale) {
   _i18n.global.setLocaleMessage(locale, messages.default)
 
   return nextTick()
+}
+
+function setDocumentAttributesFor(locale) {
+  const htmlElement = document.querySelector('html')
+
+  htmlElement.setAttribute('lang', locale)
 }
 
 export default {
