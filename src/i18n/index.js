@@ -4,9 +4,11 @@ import { numberFormats } from './numbers'
 import { arabicPluralRules } from './plurals'
 import { datetimeFormats } from './datetimes'
 
+export const defaultLocale = 'en-US'
+
 const i18n = createI18n({
-  locale: 'en-US',
-  fallbackLocale: 'en-US',
+  locale: defaultLocale,
+  fallbackLocale: defaultLocale,
   messages,
   numberFormats,
   datetimeFormats,
