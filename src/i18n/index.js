@@ -54,7 +54,7 @@ function setDocumentAttributesFor(locale) {
 }
 
 export default {
-  get instance() {
+  get vueI18n() {
     return _i18n
   },
   setup,
