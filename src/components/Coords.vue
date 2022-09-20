@@ -1,31 +1,21 @@
-<script>
-export default {
-  data() {
-    return {
-      loading: true,
-      coords: null,
-      datetime: '',
-    }
-  },
+<script setup>
+import { ref, computed } from 'vue'
 
-  created() {
-    this.loading = true
+const loading = ref(true)
+const coords = ref(null)
+const datetime = ref('')
 
-    fetch('/data/coords.json')
-      .then((res) => res.json())
-      .then(({ coords, timestamp }) => {
-        this.coords = coords
-        this.datetime = new Date(timestamp * 1000)
-        this.loading = false
-      })
-  },
+fetch('/data/coords.json')
+  .then((res) => res.json())
+  .then(({ loadedCoords, timestamp }) => {
+    coords.value = loadedCoords
+    datetime.value = new Date(timestamp * 1000)
+    loading.value = false
+  })
 
-  computed: {
-    formattedCoords() {
-      return `${this.coords.latitude}° N, ${this.coords.longitude}° E`
-    },
-  },
-}
+const formattedCoords = computed(
+  () => `${coords.latitude}° N, ${coords.longitude}° E`
+)
 </script>
 
 <template>

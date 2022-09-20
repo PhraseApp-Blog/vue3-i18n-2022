@@ -1,25 +1,16 @@
-<script>
+<script setup>
+import { ref } from 'vue'
 import AstroCard from './AstroCard.vue'
 
-export default {
-  components: { AstroCard },
+const loading = ref(true)
+const astros = ref([])
 
-  data() {
-    return {
-      loading: true,
-      astros: [],
-    }
-  },
-
-  created() {
-    fetch('/data/astronauts.json')
-      .then((res) => res.json())
-      .then((data) => {
-        this.astros = data
-        this.loading = false
-      })
-  },
-}
+fetch('/data/astronauts.json')
+  .then((res) => res.json())
+  .then((data) => {
+    astros.value = data
+    loading.value = false
+  })
 </script>
 <template>
   <p v-if="loading">Loading...</p>
