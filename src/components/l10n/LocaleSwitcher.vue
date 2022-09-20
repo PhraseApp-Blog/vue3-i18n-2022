@@ -7,8 +7,8 @@ import { supportedLocales } from '../../i18n'
 const router = useRouter()
 const { locale } = useI18n()
 
-function onLocaleChange(event) {
-  const newLocale = event.target.value
+function onLocaleChange(event_) {
+  const newLocale = event_.target.value
 
   if (newLocale === locale.value) {
     return
