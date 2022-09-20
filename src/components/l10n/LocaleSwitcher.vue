@@ -1,27 +1,28 @@
-<script>
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 import { supportedLocales } from '../../i18n'
 
-export default {
-  methods: {
-    onLocaleChange(event) {
-      const newLocale = event.target.value
+const router = useRouter()
+const { locale } = useI18n()
 
-      if (newLocale === this.$i18n.locale) {
-        return
-      }
+function onLocaleChange(event) {
+  const newLocale = event.target.value
 
-      this.$router.push(`/${newLocale}`)
-    },
-  },
-  computed: {
-    locales() {
-      return Object.keys(supportedLocales).map((code) => ({
-        code,
-        name: supportedLocales[code].name,
-      }))
-    },
-  },
+  if (newLocale === locale.value) {
+    return
+  }
+
+  router.push(`/${newLocale}`)
 }
+
+const locales = computed(() =>
+  Object.keys(supportedLocales).map((code) => ({
+    code,
+    name: supportedLocales[code].name,
+  }))
+)
 </script>
 
 <template>

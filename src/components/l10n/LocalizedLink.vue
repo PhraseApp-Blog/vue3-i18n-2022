@@ -1,17 +1,15 @@
-<script>
+<script setup>
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
-export default {
-  props: ['to'],
-  components: { RouterLink },
-  computed: {
-    localizedUrl() {
-      return this.to == '/'
-        ? `/${this.$i18n.locale}`
-        : `/${this.$i18n.locale}/${this.to}`
-    },
-  },
-}
+const props = defineProps(['to'])
+
+const { locale } = useI18n()
+
+const localizedUrl = computed(() =>
+  props.to === '/' ? `/${locale.value}` : `/${locale.value}/${props.to}`
+)
 </script>
 
 <template>

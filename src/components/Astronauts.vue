@@ -1,34 +1,26 @@
-<script>
+<script setup>
+import { ref } from 'vue'
 import AstroCard from './AstroCard.vue'
 
-export default {
-  components: { AstroCard },
+const loading = ref(true)
+const astros = ref([])
+const updated = ref(new Date())
 
-  data() {
-    return {
-      loading: true,
-      astros: [],
-      updated: new Date(),
-    }
-  },
-
-  created() {
-    fetch('/data/astronauts.json')
-      .then((res) => res.json())
-      .then((data) => {
-        this.astros = data
-        this.loading = false
-      })
-  },
-}
+fetch('/data/astronauts.json')
+  .then((res) => res.json())
+  .then((data) => {
+    astros.value = data
+    loading.value = false
+  })
 </script>
+
 <template>
   <p v-if="loading">Loading...</p>
 
   <div v-else>
     <div class="flex justify-between items-baseline mb-6">
       <h2 class="text-purple-300 text-2xl font-extralight">
-        🧑‍🚀 {{ $tc('peopleInSpace', astros.length) }}
+        🧑‍🚀 {{ $t('peopleInSpace', astros.length) }}
       </h2>
 
       <p class="text-purple-300 font-extralight text-sm">

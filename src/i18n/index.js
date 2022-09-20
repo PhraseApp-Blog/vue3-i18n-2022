@@ -16,6 +16,7 @@ let _i18n
 
 function setup(options = { locale: defaultLocale }) {
   _i18n = createI18n({
+    legacy: false,
     locale: options.locale,
     fallbackLocale: defaultLocale,
     messages: { [defaultLocale]: defaultMessages },
@@ -32,7 +33,7 @@ function setup(options = { locale: defaultLocale }) {
 }
 
 function setLocale(newLocale) {
-  _i18n.global.locale = newLocale
+  _i18n.global.locale.value = newLocale
   setDocumentAttributesFor(newLocale)
 }
 

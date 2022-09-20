@@ -1,17 +1,14 @@
-<script>
-export default {
-  props: {
-    name: String,
-    photoUrl: String,
-    nationality: String,
-    craft: String,
-  },
-  computed: {
-    fullPhotoUrl() {
-      return `/img/astros/${this.photoUrl}`
-    },
-  },
-}
+<script setup>
+import { computed } from 'vue'
+
+const props = defineProps({
+  name: String,
+  photoUrl: String,
+  nationality: String,
+  craft: String,
+})
+
+const fullPhotoUrl = computed(() => `/img/astros/${props.photoUrl}`)
 </script>
 
 <template>

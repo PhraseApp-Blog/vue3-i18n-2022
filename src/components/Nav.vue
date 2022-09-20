@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import LocalizedLink from './l10n/LocalizedLink.vue'
 import LocaleSwitcher from './l10n/LocaleSwitcher.vue'
 </script>

@@ -1,37 +1,30 @@
-<script>
-export default {
-  data() {
-    return {
-      loading: true,
-      coords: null,
-      datetime: '',
-    }
-  },
+<script setup>
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-  created() {
-    this.loading = true
+const { t, n, d } = useI18n()
 
-    fetch('/data/coords.json')
-      .then((res) => res.json())
-      .then(({ coords, timestamp }) => {
-        this.coords = coords
-        this.datetime = new Date(timestamp * 1000)
-        this.loading = false
-      })
-  },
+const loading = ref(true)
+const coords = ref(null)
+const datetime = ref('')
 
-  computed: {
-    issPosition() {
-      const { latitude, longitude } = this.coords
+fetch('/data/coords.json')
+  .then((res) => res.json())
+  .then(({ coords: loadedCoords, timestamp }) => {
+    coords.value = loadedCoords
+    datetime.value = new Date(timestamp * 1000)
+    loading.value = false
+  })
 
-      return this.$t('issPosition', {
-        latitude: this.$n(latitude, 'coords'),
-        longitude: this.$n(longitude, 'coords'),
-        datetime: this.$d(this.datetime, 'full'),
-      })
-    },
-  },
-}
+const issPosition = computed(() => {
+  const { latitude, longitude } = coords.value
+
+  return t('issPosition', {
+    latitude: n(latitude, 'coords'),
+    longitude: n(longitude, 'coords'),
+    datetime: d(datetime.value, 'full'),
+  })
+})
 </script>
 
 <template>
