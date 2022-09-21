@@ -3,8 +3,8 @@ import { supportedLocales } from '../../i18n'
 
 export default {
   methods: {
-    onLocaleChange(event) {
-      const newLocale = event.target.value
+    onLocaleChange(event_) {
+      const newLocale = event_.target.value
 
       if (newLocale === this.$i18n.locale) {
         return
