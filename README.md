@@ -1,6 +1,12 @@
-# demo-vue-3-2022
+# Vue I18n Demo
 
-This template should help get you started developing with Vue 3 in Vite.
+This demo app is a companion to a Phrase blog article.
+
+## Branches in this repo
+- `start-options` contains demo code built with the Vue Options API before i18n.
+- `i18n-options` and `main` contain Options API code after i18n.
+- `start-composition` contains demo code built with the Vue Composition API before i18n.
+- `i18n-composition` contains Composition API code after i18n.
 
 ## Recommended IDE Setup
 
