@@ -1,5 +1,5 @@
 <script>
-import { supportedLocales } from '../../i18n'
+import { supportedLocales } from '@/i18n'
 
 export default {
   methods: {
