@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import { supportedLocales } from '../../i18n'
+import { supportedLocales } from '@/i18n'
 
 const router = useRouter()
 const { locale } = useI18n()
